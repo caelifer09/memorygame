@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #E6E6E6;
+  --secondary-color: #D9D9D9;
+  --background:#23477D;
+  --button-color:#E0B415;
+  --button-border:#D80000;
+  --button-selected-color:#15E0BC;
+  --button-selected-border:#003CD8;
+}
+
+@layer utilities {
+  .button-selected {
+    @apply bg-[--button-selected-color] border-[--button-selected-border]
+   }
+}
+
+.button {
+  @apply bg-[--button-color] border-[--button-border] rounded-3xl border-4 hover:button-selected text-6xl text-white p-2 m-2
+}
+
+.difficulty-button {
+  @apply w-[180px] h-[56px] text-3xl font-normal rounded-3xl border-4
+}
+
+.logout {
+  @apply w-[225px] h-[50px] bg-[--primary-color] text-2xl rounded-[53px] font-normal hover:border-4 hover:border-black
+}
+
+.title {
+  @apply text-3xl text-center m-2
+}
+
+.labels {
+  @apply text-gray-400 text-2xl mx-2 p-2
+}
+
+.score {
+ @apply bg-[-primary-color]
+}
+
+.mobile-mode {
+  @apply flex flex-col
+}
+
