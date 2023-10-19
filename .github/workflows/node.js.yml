@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-test-deploy:
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -25,10 +25,3 @@ jobs:
           context: .
           push: true
           tags: caelifer09/memorygame:${{ github.sha }}
-          
-      - name: Deploy 
-        run: |
-            docker stop memorygame || true
-            docker rm memorygame || true
-            docker pull ${{ secrets.DOCKER_USERNAME }}/memorygame:${{ github.sha }}
-            docker run -d --name memorygame -p 3000:3000 ${{ secrets.DOCKER_USERNAME }}/memorygame:${{ github.sha }}
