@@ -24,4 +24,4 @@ jobs:
         with:
           context: .
           push: true
-          tags: caelifer09/memorygame:${{ github.sha }}
+          tags: caelifer09/memorygame:latest

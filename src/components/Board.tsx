@@ -15,7 +15,7 @@ interface Props {
 const Board = ({ user, setUser }: Props): React.JSX.Element => {
     const [difficulty, setDifficulty] = React.useState<Difficulty>(Difficulty.Easy);
 
-    const {game, gameStart, cards, handleClickCard, loading} = useCards(user.name);
+    const {game, gameStart, cards, handleClickCard, loading, hostname} = useCards(user.name);
 
     React.useEffect(() => {
         gameStart(difficulty)
@@ -65,7 +65,7 @@ const Board = ({ user, setUser }: Props): React.JSX.Element => {
             <Card key={card.id} card={card} callback={handleClickCard} />
             ))}
         </div>
-        <p>footer</p>
+        <p>{hostname}</p>
     </div>
   )
 }
